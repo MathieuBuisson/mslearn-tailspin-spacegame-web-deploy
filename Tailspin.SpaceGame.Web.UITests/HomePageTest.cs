@@ -52,7 +52,7 @@ namespace UITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
                 // Navigate to the site.
-                // The site name is stored in the SITE_URL environment variable to make 
+                // The site name is stored in the SITE_URL environment variable to make
                 // the tests more flexible.
                 string url = Environment.GetEnvironmentVariable("SITE_URL");
                 driver.Navigate().GoToUrl(url + "/");
@@ -71,7 +71,7 @@ namespace UITests
                 Cleanup();
             }
         }
-    
+
         [OneTimeTearDown]
         public void Cleanup()
         {
@@ -111,7 +111,7 @@ namespace UITests
             {
                 // Click the close button that's part of the modal.
                 ClickElement(FindElement(By.ClassName("close"), modal));
-                
+
                 // Wait for the modal to close and for the main page to again be clickable.
                 FindElement(By.TagName("body"));
             }
